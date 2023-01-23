@@ -20,15 +20,29 @@ public class App
     public static void main( String[] args )
     {
 
-        Alumno a1 = new Alumno(7,"Sara", LocalDate.of(1999,05,15),8.2,"DAW");
+        Alumno a1= new Alumno(0,"Jose", LocalDate.of(1999,06,15),8.2,"DAW");
+        Alumno a2= new Alumno(0,"Marta", LocalDate.of(1999,05,15),8.2,"DAW");
 
         manager.getTransaction().begin();
-
             manager.persist(a1);
-
+            manager.persist(a2);
+            a2.setNombre("Tizziano");
         manager.getTransaction().commit();
-
         mostrarTodosLosAlumnos();
+        manager.close();
+
+        manager = emf.createEntityManager();
+        manager.getTransaction().begin();
+            a1 = manager.merge(a1);
+            a2 = manager.merge(a2);
+
+            a2.setNota_media(6);
+            manager.persist(a2);
+
+            manager.remove(a1);
+        manager.getTransaction().commit();
+        mostrarTodosLosAlumnos();
+        manager.close();
 
     }
     public static void mostrarAlumno(Object id){

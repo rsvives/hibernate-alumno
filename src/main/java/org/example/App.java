@@ -5,6 +5,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.PersistenceUnit;
 import org.example.models.Alumno;
+import org.example.models.Cuenta_twitter;
+import org.example.models.Direccion;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,29 +22,34 @@ public class App
     public static void main( String[] args )
     {
 
-        Alumno a1= new Alumno(0,"Jose", LocalDate.of(1999,06,15),8.2,"DAW");
-        Alumno a2= new Alumno(0,"Marta", LocalDate.of(1999,05,15),8.2,"DAW");
+//        Alumno a1= new Alumno(0,"Jose", LocalDate.of(1999,06,15),8.2,"DAW");
+//        Alumno a2= new Alumno(0,"Marta", LocalDate.of(1999,05,15),8.2,"DAW");
 
-        manager.getTransaction().begin();
-            manager.persist(a1);
-            manager.persist(a2);
-            a2.setNombre("Tizziano");
-        manager.getTransaction().commit();
-        mostrarTodosLosAlumnos();
-        manager.close();
 
-        manager = emf.createEntityManager();
-        manager.getTransaction().begin();
-            a1 = manager.merge(a1);
-            a2 = manager.merge(a2);
+//        manager.getTransaction().begin();
+//
+//        manager.persist(d1);
+//        d1.setCalle("Gnal Elorza");
+//        manager.persist(d2);
+//        manager.persist(d3);
 
-            a2.setNota_media(6);
-            manager.persist(a2);
+//        manager.getTransaction().commit();
+        //mostrarTodosLosAlumnos();
+//        mostrarDirecciones();
+//        manager.close();
 
-            manager.remove(a1);
-        manager.getTransaction().commit();
-        mostrarTodosLosAlumnos();
-        manager.close();
+
+//        Alumno miAlumno = manager.find(Alumno.class, 2L);
+//        Direccion direccionMiAlumno = miAlumno.getDireccion();
+//
+//        System.out.println(direccionMiAlumno);
+
+        Alumno a1 =new Alumno(0,"alumno1",LocalDate.of(2000,10,10),7.9,"2DAM");
+
+        Cuenta_twitter c1 = new Cuenta_twitter(0,"nombreCuenta1","nick1",LocalDate.of(2020,10,10),a1);
+        Cuenta_twitter c2 = new Cuenta_twitter(0,"nombreCuenta2","nick2",LocalDate.of(2022,12,12),a1);
+
+
 
     }
     public static void mostrarAlumno(Object id){
@@ -54,6 +61,13 @@ public class App
 
         for (Alumno alumno : todosLosAlumnos) {
             System.out.println(alumno.toString());
+        }
+    }
+
+    public static void mostrarDirecciones(){
+        List<Direccion> todasLasDirecciones = (List<Direccion>) manager.createQuery("FROM Direccion").getResultList();
+        for (Direccion d : todasLasDirecciones) {
+            System.out.println(d.toString());
         }
     }
 

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 public class Alumno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="id_alumno")
     private int id;
     @Column(name="nombre")
     private String nombre;
@@ -21,6 +22,13 @@ public class Alumno implements Serializable {
     private double nota_media;
     @Column(name="curso", length = 4)
     private String curso;
+    @OneToOne(mappedBy = "alumno")
+    private Direccion direccion;
+
+    @OneToMany(mappedBy = "alumno")
+
+    private List<Cuenta_twitter> cuentas_twitter;
+
 
     public Alumno(){}
 
@@ -30,6 +38,14 @@ public class Alumno implements Serializable {
         this.f_nacimiento = f_nacimiento;
         this.nota_media = nota_media;
         this.curso = curso;
+    }
+    public Alumno(int id, String nombre, LocalDate f_nacimiento, double nota_media, String curso, Direccion dir) {
+        this.id = id;
+        this.nombre = nombre;
+        this.f_nacimiento = f_nacimiento;
+        this.nota_media = nota_media;
+        this.curso = curso;
+        this.direccion = dir;
     }
 
     public int getId() {
@@ -70,6 +86,22 @@ public class Alumno implements Serializable {
 
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public List<Cuenta_twitter> getCuentas_twitter() {
+        return cuentas_twitter;
+    }
+
+    public void setCuentas_twitter(List<Cuenta_twitter> cuentas_twitter) {
+        this.cuentas_twitter = cuentas_twitter;
     }
 
     @Override

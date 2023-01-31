@@ -30,8 +30,8 @@ public class Cuenta_twitter implements Serializable {
     public Cuenta_twitter() {
     }
 
-    public Cuenta_twitter(int id_cuenta, String nombre, String nick, LocalDate f_creacion, Alumno alumno) {
-        this.id_cuenta = id_cuenta;
+    public Cuenta_twitter( String nombre, String nick, LocalDate f_creacion, Alumno alumno) {
+
         this.nombre = nombre;
         this.nick = nick;
         this.f_creacion = f_creacion;
@@ -77,4 +77,16 @@ public class Cuenta_twitter implements Serializable {
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }
+
+    @Override
+    public String toString() {
+        return "Cuenta_twitter{" +
+                "id_cuenta=" + id_cuenta +
+                ", nombre='" + nombre + '\'' +
+                ", nick='" + nick + '\'' +
+                ", f_creacion=" + f_creacion +
+                '}';
+    }
 }
+
+

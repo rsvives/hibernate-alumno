@@ -29,11 +29,21 @@ public class Alumno implements Serializable {
 
     private List<Cuenta_twitter> cuentas_twitter;
 
+    public Alumno(String nombre, LocalDate f_nacimiento, double nota_media, String curso, List<Cuenta_twitter> cuentas_twitter) {
+        this.nombre = nombre;
+        this.f_nacimiento = f_nacimiento;
+        this.nota_media = nota_media;
+        this.curso = curso;
+        this.cuentas_twitter = cuentas_twitter;
+    }
+
+
+
 
     public Alumno(){}
 
-    public Alumno(int id, String nombre, LocalDate f_nacimiento, double nota_media, String curso) {
-        this.id = id;
+    public Alumno(String nombre, LocalDate f_nacimiento, double nota_media, String curso) {
+
         this.nombre = nombre;
         this.f_nacimiento = f_nacimiento;
         this.nota_media = nota_media;
@@ -101,6 +111,7 @@ public class Alumno implements Serializable {
     }
 
     public void setCuentas_twitter(List<Cuenta_twitter> cuentas_twitter) {
+
         this.cuentas_twitter = cuentas_twitter;
     }
 
@@ -112,6 +123,8 @@ public class Alumno implements Serializable {
                 ", f_nacimiento=" + f_nacimiento +
                 ", nota_media=" + nota_media +
                 ", curso='" + curso + '\'' +
+                ", direccion=" + direccion +
+                ", cuentas_twitter=" + cuentas_twitter +
                 '}';
     }
 }

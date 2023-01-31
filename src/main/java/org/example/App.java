@@ -9,6 +9,7 @@ import org.example.models.Cuenta_twitter;
 import org.example.models.Direccion;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -44,12 +45,31 @@ public class App
 //
 //        System.out.println(direccionMiAlumno);
 
-        Alumno a1 =new Alumno(0,"alumno1",LocalDate.of(2000,10,10),7.9,"2DAM");
+//        Alumno a1 =new Alumno("alumno1",LocalDate.of(2000,10,10),7.9,
+//                "2DAM");
+//
+//        Cuenta_twitter c1 = new Cuenta_twitter("nombreCuenta1","nick1",LocalDate.of(2020,
+//                10,10),a1);
+//        Cuenta_twitter c2 = new Cuenta_twitter("nombreCuenta2","nick2",LocalDate.of(2022,
+//                12,12),a1);
+//
+//        List<Cuenta_twitter> listaCuentas = new ArrayList<Cuenta_twitter>();
+//        listaCuentas.add(c1);
+//        listaCuentas.add(c2);
+//
+//        a1.setCuentas_twitter(listaCuentas);
+//
+//        manager.getTransaction().begin();
+//
+//        manager.persist(a1);
+//        manager.persist(c1);
+//        manager.persist(c2);
+//
+//        manager.getTransaction().commit();
+//        manager.close();
+//
 
-        Cuenta_twitter c1 = new Cuenta_twitter(0,"nombreCuenta1","nick1",LocalDate.of(2020,10,10),a1);
-        Cuenta_twitter c2 = new Cuenta_twitter(0,"nombreCuenta2","nick2",LocalDate.of(2022,12,12),a1);
-
-
+        mostrarAlumno(23L);
 
     }
     public static void mostrarAlumno(Object id){

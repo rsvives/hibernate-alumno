@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9610d449-1a4c-4a10-bf1a-c6c045f59ad6" name="Changes" comment="one one and one to many">
+    <list default="true" id="9610d449-1a4c-4a10-bf1a-c6c045f59ad6" name="Changes" comment="one to many 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Cuenta_twitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Cuenta_twitter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675070834468</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="one to many 2.0">
+      <created>1675169055316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675169055316</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +102,7 @@
     <MESSAGE value="persistencia" />
     <MESSAGE value="managed entities" />
     <MESSAGE value="one one and one to many" />
-    <option name="LAST_COMMIT_MESSAGE" value="one one and one to many" />
+    <MESSAGE value="one to many 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="one to many 2.0" />
   </component>
 </project>

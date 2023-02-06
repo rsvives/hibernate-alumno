@@ -1,12 +1,11 @@
 package org.example;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.PersistenceUnit;
+import jakarta.persistence.*;
 import org.example.models.Alumno;
 import org.example.models.Cuenta_twitter;
 import org.example.models.Direccion;
+import org.hibernate.Session;
+import org.hibernate.SessionBuilder;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -69,8 +68,8 @@ public class App
 //        manager.close();
 //
 
-        mostrarAlumno(23L);
-
+//        mostrarAlumno(23L);
+            alumnosPorNota(7);
     }
     public static void mostrarAlumno(Object id){
         Alumno a1 = manager.find(Alumno.class,id);
@@ -90,5 +89,15 @@ public class App
             System.out.println(d.toString());
         }
     }
+    public static void alumnosPorNota(float nota){
 
+        String hql = "FROM Alumno WHERE notaMedia > :nota";
+        Query query = manager.createQuery(hql);
+        query.setParameter("nota",nota );
+
+        List<Alumno> alumnos = query.getResultList();
+
+        System.out.println(alumnos);
+
+    }
 }

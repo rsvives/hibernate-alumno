@@ -19,7 +19,7 @@ public class Alumno implements Serializable {
     @Column(name="f_nacimiento")
     private LocalDate f_nacimiento;
     @Column(name="nota_media")
-    private double nota_media;
+    private double notaMedia;
     @Column(name="curso", length = 4)
     private String curso;
     @OneToOne(mappedBy = "alumno")
@@ -32,7 +32,7 @@ public class Alumno implements Serializable {
     public Alumno(String nombre, LocalDate f_nacimiento, double nota_media, String curso, List<Cuenta_twitter> cuentas_twitter) {
         this.nombre = nombre;
         this.f_nacimiento = f_nacimiento;
-        this.nota_media = nota_media;
+        this.notaMedia = nota_media;
         this.curso = curso;
         this.cuentas_twitter = cuentas_twitter;
     }
@@ -46,14 +46,14 @@ public class Alumno implements Serializable {
 
         this.nombre = nombre;
         this.f_nacimiento = f_nacimiento;
-        this.nota_media = nota_media;
+        this.notaMedia = nota_media;
         this.curso = curso;
     }
     public Alumno(int id, String nombre, LocalDate f_nacimiento, double nota_media, String curso, Direccion dir) {
         this.id = id;
         this.nombre = nombre;
         this.f_nacimiento = f_nacimiento;
-        this.nota_media = nota_media;
+        this.notaMedia = nota_media;
         this.curso = curso;
         this.direccion = dir;
     }
@@ -83,11 +83,11 @@ public class Alumno implements Serializable {
     }
 
     public double getNota_media() {
-        return nota_media;
+        return notaMedia;
     }
 
     public void setNota_media(double nota_media) {
-        this.nota_media = nota_media;
+        this.notaMedia = nota_media;
     }
 
     public String getCurso() {
@@ -121,7 +121,7 @@ public class Alumno implements Serializable {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", f_nacimiento=" + f_nacimiento +
-                ", nota_media=" + nota_media +
+                ", nota_media=" + notaMedia +
                 ", curso='" + curso + '\'' +
                 ", direccion=" + direccion +
                 ", cuentas_twitter=" + cuentas_twitter +
